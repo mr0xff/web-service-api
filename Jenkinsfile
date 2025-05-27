@@ -1,15 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage("Bulid"){
+    stage("Build project"){
       steps {
-        sh "yarn install"
-        sh "yarn build:ts"
+        sh "npm install"
+        sh "npm run build:ts"
       }
     }
     stage("Deployment"){
       steps{
-        sh "yarn start"
+        sh "npm run start"
       }
     }
   }
