@@ -5,6 +5,7 @@ pipeline {
       steps {
         echo "vendo qual usuário"
         sh "whoami"
+        sh "ssh-key -l"
       }
     }
   }
