@@ -6,14 +6,13 @@ pipeline {
   stages {
     stage("Build project"){
       steps {
-        sh "node -v"
         sh "yarn install"
         sh "yarn build:ts"
       }
     }
-    stage("Deployment"){
+    stage("Testing CI"){
       steps{
-        sh "yarn start"
+        sh "yarn test"
       }
     }
   }
