@@ -3,7 +3,7 @@ pipeline {
   stage {
     stage("Bulid"){
       steps {
-        echo "vendo qual usuário"
+        echo "Hello world"
         sh "whoami"
         sh "ssh-key -l"
       }
