@@ -3,8 +3,12 @@ pipeline {
   stages {
     stage("Bulid"){
       steps {
-        echo "Hello world"
-        sh "ls -l"
+        sh "podman build -t web-service ."
+      }
+    }
+    stage("Deployment"){
+      steps{
+        sh "podman run -d -p 4000:3000 web-service"
       }
     }
   }
