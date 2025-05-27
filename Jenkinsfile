@@ -4,8 +4,7 @@ pipeline {
     stage("Bulid"){
       steps {
         echo "Hello world"
-        sh "whoami"
-        sh "ssh-key -l"
+        sh "ls -l"
       }
     }
   }
