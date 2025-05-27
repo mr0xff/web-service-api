@@ -1,6 +1,5 @@
-FROM node 
+FROM node:22 
 WORKDIR /app
-COPY . .
-RUN npm install && npm run build:ts
+RUN yarn isntall && yarn build
+CMD yarn start 
 EXPOSE 3000
-CMD ["npm", "run", "start"]
