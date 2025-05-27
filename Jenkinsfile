@@ -3,13 +3,13 @@ pipeline {
   stages {
     stage("Build project"){
       steps {
-        sh "npm install"
-        sh "npm run build:ts"
+        sh "yarn install"
+        sh "yarn build:ts"
       }
     }
     stage("Deployment"){
       steps{
-        sh "npm run start"
+        sh "yarn start"
       }
     }
   }
