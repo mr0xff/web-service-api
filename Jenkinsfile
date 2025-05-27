@@ -1,14 +1,17 @@
 pipeline {
-  agent any
+  agent {
+    docker { image: "node:22" }
+  }
   stages {
     stage("Bulid"){
       steps {
-        sh "podman build -t web-service ."
+        sh "yarn install"
+        sh "yarn build:ts"
       }
     }
     stage("Deployment"){
       steps{
-        sh "podman run -d -p 4000:3000 web-service"
+        sh "yarn start"
       }
     }
   }
