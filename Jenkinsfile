@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage("Build project"){
       steps {
+        sh "node -v"
         sh "yarn install"
         sh "yarn build:ts"
       }
